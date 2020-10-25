@@ -1,38 +1,248 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#project-list {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  column-gap: 10px;
+  row-gap: 10px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  body {
+      background-color: rgb(240, 239, 239);
   }
-  to {
-    transform: rotate(360deg);
+  
+  header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #000;
   }
-}
+  
+  /* img {
+      filter: grayscale(100%);
+  } */
+  
+  h1 {
+      font-family: 'Montserrat Subrayada', sans-serif;
+      text-decoration: none;
+      font-size: 2rem;
+      margin: 0;
+  }
+  
+  h2 {
+     font-family: 'Montserrat Subrayada', sans-serif; 
+  }
+  
+  h3 {
+      font-size: 2rem;
+      margin: 0;
+  }
+  a {
+      font-size: 18px;
+      text-decoration: none;
+    }
+  /* #header-text {
+      flex-basis: 80%;
+      display: flex;
+  } */
+  
+  /* nav {
+      flex-basis: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+  } */
+  
+  a {
+      margin: 2px;
+      text-decoration: none;
+      color: #000;
+  }
+  
+  a, p {
+      font-family: monospace;
+  }
+  
+  /* ---------------------------------------------------
+                        Form Styles
+  ----------------------------------------------------*/
+  form {
+      margin: 50px auto;
+      width: 90%;
+    }
+    
+    .form-item p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+    }
+    
+    .form-item label {
+      flex-basis: 150px;
+      font-size: 22px;
+    }
+    
+    .form-item input,
+    .form-item textarea {
+      flex-basis: 50%;
+      border: 2px solid #FDDC5C;
+    }
+    
+    .form-item input:hover,
+    .form-item textarea:hover {
+      border: 2px solid #AA0000;
+    }
+    
+    .form-item input,
+    .form-item textarea,
+    .form-item button {
+      border: 2px solid #FDDC5C;
+      background-color: #FFF;
+      padding: 5px;
+      font-size: 18px;
+    }
+    
+    .form-item button:hover {
+      border: 2px solid #AA0000;
+      background-color: #AA0000;
+      color: #FFF;
+    }
+    
+    .form-item button {
+      width: 100px;
+    }
+  #hero {
+      text-align: center;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: no-repeat center center / cover;
+      padding: 2em;
+      height: 15em;
+  }
+  #hero .text, #hero h1 {
+      font-size: 4em;
+      font-weight: 700;
+      text-shadow: 1px 1px 10px #3b3a3b;
+  }
+  /* ---------------------------------------------------
+                  MAIN NAVIGATION STYLES
+  ----------------------------------------------------*/
+  
+  .main-navigation ul {
+      padding-left: 0;
+    }
+    
+    .main-navigation li {
+      list-style: none;
+      text-align: center;
+      margin: 10px 0;
+      background-color: #AA0000;
+    }
+    
+    .main-navigation a {
+      display: block;
+      padding: 15px 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      background: rgba(67,67,67,0.17);
+      color: #FFF;
+    }
+    
+      .main-navigation a:visited {
+        /* color: rgb(106,106,106); */
+        color: #FFF;
+      }
+    
+      .main-navigation a:hover {
+        color: rgb(8, 211, 18);
+        transition: .5s color;
+        background: rgba(62, 61, 61, 0.51);
+      }
+    
+      .main-navigation a:active {
+        color: rgb(172,140,71);
+      }
+    
+    @media screen and (min-width: 750px){
+      
+      .main-navigation {
+        min-height: 100px;
+        border-top: 1px solid rgb(36,36,36);
+        border-bottom: 1px solid rgb(36,36,36);
+      } /* media query for 750px  */
+      
+      .main-navigation ul {
+        max-width: 950px;
+        margin: 0 auto;
+      }
+      
+        .main-navigation li {
+          float: left;
+          margin-left: 20px;
+          width: 20%;
+        }
+        .main-navigation ul .createAccount {
+          width: 25%;
+        }
+      
+        .main-navigation a {
+          background: none;
+        }
+      
+          .main-navigation a:hover {
+            background: none;
+          }
+    } /* media query for 750px  */
+    
+    @media screen and (min-width: 880px){
+      
+      .main-navigation ul {
+        position: relative;
+        right: -30px ;
+      }
+      
+    }/* media query for 880px  */
+    /* ---------------------------------------------------
+                  DELETE HTML STYLES
+  ----------------------------------------------------*/
+  .form-delete form {
+    margin: 50px auto;
+    width: 90%;
+  }
+  
+  .form-delete p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .form-delete button {
+    border: 2px solid #FDDC5C;
+    background-color: #FFF;
+    padding: 5px;
+    font-size: 18px;
+  }
+  
+  .form-delete button:hover {
+    border: 2px solid #AA0000;
+    background-color: #AA0000;
+    color: #FFF;
+  }
+  
+  .form-delete button {
+    width: 500px;
+  }
+    /* ---------------------------------------------------
+                  Profile View STYLES
+  ----------------------------------------------------*/
+  .form-Profile p, h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 18px;
+  }

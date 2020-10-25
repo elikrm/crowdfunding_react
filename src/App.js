@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from"react-router-dom";
+import Nav from "./components/Nav/Nav";
+import HomePage from "./pages/HomePage";
+import ProjectPage from "./pages/ProjectPage";
+import LoginPage from "./pages/LoginPage";
+import EditProjectPage from "./pages/EditProjectPage";
+import "./App.css";
+import NewProjectPage from "./pages/NewProject";
+import Header from "./Header/Header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Router>
+      <Route path="/">
+        <Header />
+      </Route>
+    <div>
+    <Nav />
+      <Switch>
 
+        <Route path="/delete-project/:id">
+          <EditProjectPage />
+        </Route>
+
+        <Route path="/edit-project/:id">
+          <EditProjectPage />
+        </Route>
+
+        <Route path="/project/:id">
+          <ProjectPage />
+        </Route>
+
+        <Route path="/login">
+        <LoginPage />
+        </Route>  
+
+        <Route path="/new-project">
+          <NewProjectPage />
+        </Route>
+
+        <Route path="/">
+          <HomePage />
+        </Route>
+
+      </Switch>
+    </div>
+    </Router>
+  );
+  }
 export default App;
