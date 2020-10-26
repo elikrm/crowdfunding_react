@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-// import { oneProject } from "../data";
 import { useParams } from "react-router-dom";
 import "../components/ProjectCard/ProjectCard.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 
-function ProjectPage() {
+function ProjectPage({convertDateTime}) {
     const [projectData, setProjectData] = useState({ pledges: [] });
     const { id } = useParams();
     const history = useHistory();
@@ -48,7 +47,7 @@ return (
     <div className="project-card">
         <h2>{projectData.title}</h2>
         <img src={projectData.image} />
-        <h3>Created at: {projectData.date_created}</h3>
+        <h3>Created at: {convertDateTime(projectData.date_created)}</h3>
         <h4>Description: {projectData.description}</h4>
         <h3>{`Status: ${projectData.is_open}`}</h3>
         <h3>Pledges:</h3>
@@ -66,7 +65,7 @@ return (
         <ul>
          
             <li><Link to={`/edit-project/${projectData.id}`}>Edit</Link></li>
-            <li><a><button type="submit" onClick={handledelete}>Delete</button></a></li>
+            <li><Link type="submit" onClick={handledelete}>Delete</Link></li>
         </ul>
         </nav>
     </div>

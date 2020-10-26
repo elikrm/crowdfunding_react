@@ -135,14 +135,14 @@
       padding-left: 0;
     }
     
-    .main-navigation li {
+    .main-navigation li, button {
       list-style: none;
       text-align: center;
       margin: 10px 0;
       background-color: #AA0000;
     }
     
-    .main-navigation a {
+    .main-navigation a, button {
       display: block;
       padding: 15px 10px;
       text-decoration: none;
