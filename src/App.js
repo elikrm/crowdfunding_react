@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import LogoutPage from "./pages/LogoutPage";
 import EditProjectPage from "./pages/EditProjectPage";
 import ProfilePage from "./pages/ProfilePage";
+import SignUpPage from "./pages/SignUpPage";
 import "./App.css";
 import NewProjectPage from "./pages/NewProject";
 import Header from "./Header/Header";
@@ -36,6 +37,9 @@ function App() {
     <div>
     <Nav />
       <Switch>
+        <Route path= "/SignUp">
+          <SignUpPage />
+        </Route>
 
         <Route path= "/Profile">
           <ProfilePage />

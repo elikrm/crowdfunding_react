@@ -55,7 +55,7 @@ return (
             {projectData.pledges.map((pledgeData, key) => {
             return (
             <li>
-            {pledgeData.amount} from {pledgeData.supporter}
+            {pledgeData.amount} from {pledgeData.supporter_id}
             </li>
             );
             })}
