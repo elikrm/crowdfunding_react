@@ -3,12 +3,42 @@
   grid-template-columns: 30% 30% 30%;
   column-gap: 10px;
   row-gap: 10px;
+  font-weight: normal;
+  box-shadow: 0px 0px 15px gray;
+  border-radius: 10%;
+  text-decoration: none;
+  overflow: hidden;
+  text-align: center;
+  }
+  .project-card{
+    box-shadow: 0px 0px 15px gray;
+    border-radius: 10%;
+    text-decoration: none;
+    overflow: hidden;
+    text-align: center;
   }
 
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
-
-  body {
-      background-color: rgb(240, 239, 239);
+  html {
+    /* background: linear-gradient(0deg, rgba(209,195,195,1) 30%, rgba(75,70,70,1) 75%, rgba(0,0,0,1) 100%); */
+    background: rgb(202, 224, 177, 0.6);
+    font-family: "Roboto", sans-serif;
+    margin: 6vw;
+    margin-top: 2vw;
+    font-weight: normal;
+  }
+  body{ 
+    display:flex;
+    flex-direction: column;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.5), 
+        rgba(255, 255, 255, 0.5)
+      ), url(green_leaves.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* background-position: right top; */
+    border-radius: 10%;
   }
   
   header {
@@ -23,14 +53,14 @@
   } */
   
   h1 {
-      font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: "Roboto", sans-serif;
       text-decoration: none;
       font-size: 2rem;
       margin: 0;
   }
   
   h2 {
-     font-family: 'Montserrat Subrayada', sans-serif; 
+    font-family: "Roboto", sans-serif;
   }
   
   h3 {
@@ -67,66 +97,176 @@
                         Form Styles
   ----------------------------------------------------*/
   form {
-      margin: 50px auto;
-      width: 90%;
-    }
-    
-    .form-item p {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 5px;
-    }
-    
-    .form-item label {
-      flex-basis: 150px;
-      font-size: 22px;
-    }
-    
-    .form-item input,
-    .form-item textarea {
-      flex-basis: 50%;
-      border: 2px solid #FDDC5C;
-    }
-    
-    .form-item input:hover,
-    .form-item textarea:hover {
-      border: 2px solid #AA0000;
-    }
-    
-    .form-item input,
-    .form-item textarea,
-    .form-item button {
-      border: 2px solid #FDDC5C;
-      background-color: #FFF;
-      padding: 5px;
-      font-size: 18px;
-    }
-    
-    .form-item button:hover {
-      border: 2px solid #AA0000;
-      background-color: #AA0000;
-      color: #FFF;
-    }
-    
-    .form-item button {
-      width: 100px;
-    }
-  #hero {
-      text-align: center;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: no-repeat center center / cover;
-      padding: 2em;
-      height: 15em;
+    margin: 50px auto;
+    width: 90%;
   }
-  #hero .text, #hero h1 {
-      font-size: 4em;
-      font-weight: 700;
-      text-shadow: 1px 1px 10px #3b3a3b;
+  
+  .form-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
   }
+  
+  .form-item label {
+    flex-basis: 150px;
+    font-size: 22px;
+  }
+  label{
+    font-size: 22px;
+  }
+  
+  .form-item input,
+  .form-item textarea {
+    flex-basis: 50%;
+    border: 2px solid rgb(152, 157, 106)C;
+  }
+  
+  .form-item input:hover,
+  .form-item textarea:hover {
+    border: 2px solid rgb(204, 226, 7);
+  }
+  
+  .form-item input,
+  .form-item textarea,
+  .form-item button {
+    border: 2px solid rgb(152, 157, 106);
+    border-radius: 25px;
+    background-color: #FFF;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .form-item button:hover {
+    border: 2px solid  rgb(204, 226, 7);
+    background-color:  rgb(204, 226, 7);
+    color: #FFF;
+  }
+  .form-item button:hover {
+    background: rgb(204, 226, 7);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(204, 226, 7),
+                0 0 25px rgb(204, 226, 7),
+                0 0 50px rgb(204, 226, 7),
+                0 0 100px rgb(204, 226, 7);
+  }
+  
+  .form-item button {
+    width: 100px;
+  }
+  /* ---------------------------------------------------
+                  ANIMATED BUTTON STYLES
+  ----------------------------------------------------*/
+  form .form-item  button {
+    border: 2px solid rgb(152, 157, 106);
+    border-radius: 25px;
+    background-color: #FFF;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    color: rgb(204, 101, 3);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+  }
+  
+  .form-item button:hover {
+    background: rgb(204, 101, 3);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(204, 101, 3),
+                0 0 25px rgb(204, 101, 3),
+                0 0 50px rgb(204, 101, 3),
+                0 0 100px rgb(204, 101, 3);
+  }
+  
+  .form-item button span {
+    position: absolute;
+    display: block;
+  }
+  
+  .form-item button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgb(204, 101, 3));
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .form-item  button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgb(204, 101, 3));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .form-item  button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, rgb(204, 101, 3));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .form-item  button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, rgb(204, 101, 3));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  
   /* ---------------------------------------------------
                   MAIN NAVIGATION STYLES
   ----------------------------------------------------*/
@@ -139,7 +279,7 @@
       list-style: none;
       text-align: center;
       margin: 10px 0;
-      background-color: #AA0000;
+      background-color: rgb(249,167,68);
     }
     
     .main-navigation a, button {
@@ -228,8 +368,8 @@
   }
   
   .form-delete button:hover {
-    border: 2px solid #AA0000;
-    background-color: #AA0000;
+    border: 2px solid rgb(249,167,68);
+    background-color: rgb(249,167,68);
     color: #FFF;
   }
   
@@ -255,7 +395,8 @@
 
 /* Container for skill bars */
 .progress-container{
-  width: 50%; /* Full width */
+  float: right;
+  width: 90%; /* Full width */
   background-color: #ddd; /* Grey background */
   border-radius: 20px;
 }
@@ -268,4 +409,4 @@
   color: white; /* White text color */
   border-radius: 20px;
 }
-.A { background-color: rgb(153, 225, 165);} /* Green */
+.A { background-color: rgb(28, 106, 5);} /* Green */

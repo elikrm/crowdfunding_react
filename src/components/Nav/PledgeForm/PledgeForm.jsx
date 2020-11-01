@@ -72,13 +72,19 @@ function PledgeForm({ projectId}) {
                 <input type="text" id="comment" placeholder="Describe your pledge" onChange={handleChange}/>
             </div>
 
-            <div class="form-item">
+            <div>
                 <input type ="checkbox" id="anonymous"  name="anonymous" value="true" onChange={handleToggle} />
-                <label for="anonymous"> Make me annonymous</label>
+                <label for="anonymous"> Make Annonymous Pledge</label>
             </div>
 
-            <div>
-                <button type="submit" onClick={handleSubmit}>Submit</button>
+            <div class="form-item">
+                <button type="submit" onClick={handleSubmit}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Donate
+                </button>
             </div>
         </form>
     );

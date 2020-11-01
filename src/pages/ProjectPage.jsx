@@ -56,14 +56,18 @@ function ProjectPage({convertDateTime}) {
         
     }
 
+
 return (
     <div className="project-card">
         <h2>{projectData.title}</h2>
         <img src={projectData.image} />
         <h3>This project has beeen created at: {convertDateTime(projectData.date_created)}</h3>
-        <h4>Description: {projectData.description}</h4>
+        <h3>Description: </h3>
+        <h4>{projectData.description}</h4>
         <h3>goal of this project is {projectData.goal}</h3>
-        <h3>Project's {`Status: ${projectData.is_open}`}</h3>
+        <h3>Project is {(projectData.is_open)?("Open"):("Closed")}</h3>
+        
+        
 
         <hr/>
 

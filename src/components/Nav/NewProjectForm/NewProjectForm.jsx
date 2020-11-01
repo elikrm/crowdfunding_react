@@ -46,28 +46,31 @@ function NewProjectForm() {
         };
     return (
         <form>
-            <div>
+            <div class="form-item">
                 <label htmlFor="title">Project title:</label>
                 <input type="text" id="title" placeholder="Enter Project title" onChange={handleprojectChange}/>
             </div>
 
-            <div>
+            <div class="form-item">
                 <label htmlFor="description ">Project description:</label>
                 <input type="text" id="description" placeholder="Describe your project" onChange={handleprojectChange}/>
             </div>
 
-            <div>
+            <div class="form-item">
                 <label htmlFor="goal">What is the project's goal in number?</label>
                 <input type ="number" id="goal" placeholder="200" onChange={handleprojectChange} />
             </div>
 
             
-            <div>
+            <div class="form-item">
                 <label htmlFor="image">Enter an image url for this project?</label>
                 <input type ="url" id="image" placeholder="https://via.placeholder.com/300.jpg" onChange={handleprojectChange}/>
             </div>
 
-            <button type="submit" onClick={handleprojectSubmit}>Submit</button>
+            <div class="form-item">
+                <button type="submit" onClick={handleprojectSubmit}>Submit</button>
+            </div>
+            
         </form>
     );
 }

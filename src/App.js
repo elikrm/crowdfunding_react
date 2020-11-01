@@ -11,6 +11,7 @@ import SignUpPage from "./pages/SignUpPage";
 import "./App.css";
 import NewProjectPage from "./pages/NewProject";
 import Header from "./Header/Header";
+import PledgeCard from "./components/PledgeCard/PledgeCard";
 
 function App() {
 

@@ -45,17 +45,20 @@ function LoginForm() {
         };
     return (
         <form>
-            <div>
+            <div class="form-item">
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="username" placeholder="Enter username" onChange={handleChange}/>
             </div>
 
-            <div>
+            <div class="form-item">
                 <label htmlFor="password">Password:</label>
                 <input type="password" id="password" placeholder="Password" onChange={handleChange}/>
             </div>
-
-            <button type="submit" onClick={handleSubmit}>Login</button>
+            
+            <div class="form-item">
+                <button type="submit" onClick={handleSubmit}>Login</button>
+            </div>
+            
         </form>
     );
 }
