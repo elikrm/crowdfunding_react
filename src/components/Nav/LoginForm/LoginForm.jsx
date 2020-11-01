@@ -36,6 +36,8 @@ function LoginForm() {
         postData().then((response) => {
             console.log(response);
         window.localStorage.setItem("token", response.token);
+        window.localStorage.setItem("user_id", response.user_id)
+        window.localStorage.setItem("user_full_name", response.user_full_name)
         history.push("/");
         console.log(response);
         });

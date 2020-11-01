@@ -8,24 +8,21 @@ function EditProjectForm() {
     const history = useHistory();
     const { id } = useParams();
 
-    // useEffect(() =>{
-    //     setProjectDetails({
-    //         title: projectDetails.title,
-    //         description: projectDetails.description,
-    //         goal: projectDetails.goal,
-    //         image: projectDetails.image,
-    //         is_open: projectDetails.is_open,
-    //         owner: projectDetails.owner,
-    //     })
-    // }
-    // ,[projectDetails]);
+    // const [errorCode, setErrorCode] = useState(200); //this does not work!!
+    var globalerror = 200;
+
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/projects/${id}`)
         .then((results) => {
-        return results.json();
+            if(results.ok){return results.json();}
+            throw Error(results.statusText);
+        
         })
         .then((data) => {
             setProjectDetails(data);
+        })
+        .catch((error) => {
+            console.log(error)
         });
         }, []);
     //methods
@@ -46,16 +43,30 @@ function EditProjectForm() {
                 "Authorization": `Token ${savedtoken}`,
             },
             body: JSON.stringify(projectDetails),
+        })
+        .then((response) => {
+            console.log(response.status)
+            // setErrorCode(response.status); //This one does not work here!!!
+            globalerror =(response.status);
+            console.log(globalerror);
+            return response.json();
         });
-        return response.json();
+        
     };
 
-    //get token
     const handleSubmit = (e) => {
         e.preventDefault();
-        editData().then(response => {
-            console.log(response)
-            history.push( `/projects/${response.id}`)
+        editData()
+        .then((response) => {
+            if(globalerror===200){
+                history.push( `/project/${projectDetails.id}`);
+            }
+            else{
+                console.log(globalerror);
+                alert("You do not have permission to edit this project!");
+                history.push( "/");
+            }
+            
         });
     }
     //template

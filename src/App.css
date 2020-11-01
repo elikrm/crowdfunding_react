@@ -246,3 +246,26 @@
     padding: 5px;
     font-size: 18px;
   }
+
+/* ---------------------------------------------------
+                PROGRESS BAR STYLES
+----------------------------------------------------*/
+/* Make sure that padding behaves as expected */
+* {box-sizing:border-box}
+
+/* Container for skill bars */
+.progress-container{
+  width: 50%; /* Full width */
+  background-color: #ddd; /* Grey background */
+  border-radius: 20px;
+}
+
+.progress {
+  text-align: right; /* Right-align text */
+  padding-top: 3px; /* Add top padding */
+  padding-bottom: 3px; /* Add bottom padding */
+  text-align: center;
+  color: white; /* White text color */
+  border-radius: 20px;
+}
+.A { background-color: rgb(153, 225, 165);} /* Green */

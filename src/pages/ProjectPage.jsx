@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import "../components/ProjectCard/ProjectCard.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import PledgePage from "./PledgePage"
+import PledgeCard from "../components/PledgeCard/PledgeCard";
 
 
 function ProjectPage({convertDateTime}) {
@@ -37,37 +39,63 @@ function ProjectPage({convertDateTime}) {
     const handledelete = (e) => {
         
         e.preventDefault();
-        deleteData().then(response => {
-            console.log(response)
+
+        if (window.confirm(`You are about to delete the project ${projectData.title}!!!!`)) {
+            deleteData().then(response => {
+                console.log(response)
+                history.push( `/`)
+            });
+          } 
+          else {
             history.push( `/`)
-        });
+          }
+        // deleteData().then(response => {
+        //     console.log(response)
+        //     history.push( `/`)
+        // }
+        
     }
 
 return (
     <div className="project-card">
         <h2>{projectData.title}</h2>
         <img src={projectData.image} />
-        <h3>Created at: {convertDateTime(projectData.date_created)}</h3>
+        <h3>This project has beeen created at: {convertDateTime(projectData.date_created)}</h3>
         <h4>Description: {projectData.description}</h4>
-        <h3>{`Status: ${projectData.is_open}`}</h3>
+        <h3>goal of this project is {projectData.goal}</h3>
+        <h3>Project's {`Status: ${projectData.is_open}`}</h3>
+
+        <hr/>
+
         <h3>Pledges:</h3>
+        <h1>This project has been received</h1>
         <ul>
             {projectData.pledges.map((pledgeData, key) => {
+                
             return (
             <li>
-            {pledgeData.amount} from {pledgeData.supporter_id}
+                <PledgeCard  pledgeData={pledgeData}/>
             </li>
             );
             })}
         </ul>
 
         <nav class="main-navigation">
-        <ul>
-         
-            <li><Link to={`/edit-project/${projectData.id}`}>Edit</Link></li>
-            <li><Link type="submit" onClick={handledelete}>Delete</Link></li>
-        </ul>
+            <ul>
+                <li><Link to={`/edit-project/${projectData.id}`}>Edit</Link></li>
+                <li><Link type="submit" onClick={handledelete}>Delete</Link></li>
+                
+            </ul>
         </nav>
+
+        <div>
+            <PledgePage projectId={projectData.id}/>
+        </div>
+
+        <hr/>
+
+
+        
     </div>
     );
 }

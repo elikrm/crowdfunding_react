@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react"
-import { Link, useHistory } from "react-router-dom"
+import React from "react"
+import { Link } from "react-router-dom"
 
 function NavUser({ logOut }) {
-    const history = useHistory()
-    const [loading, setLoading] = useState(true)
-
   return (
     <nav className="main-navigation">
         <uL>

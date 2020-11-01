@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { allProjects } from "../data";
 import UserCard from "../components/UserCard/UserCard";
 
 
