@@ -72,28 +72,31 @@ function EditProjectForm() {
     //template
     return ( 
         <form>
-        <div>
+        <div class="form-item">
             <label htmlFor="title">Project title:</label>
             <input type="text" id="title" value = {projectDetails.title} maxlength ="400" onChange={handleChange}/>
         </div>
 
-        <div>
+        <div class="form-item">
             <label htmlFor="description ">Project description:</label>
             <textarea type="text" id="description" value = {projectDetails.description} cols="40" rows="10" onChange={handleChange}/>
         </div>
 
-        <div>
+        <div class="form-item">
             <label htmlFor="goal">Project's goal</label>
             <input type ="number" id="goal " value = {projectDetails.goal} onChange={handleChange} />
         </div>
 
         
-        <div>
+        <div class="form-item">
             <label htmlFor="image">Project's image url</label>
             <input type ="url" id="image" value = {projectDetails.image} onChange={handleChange}/>
         </div>
-
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+        
+        <div class="form-item">
+            <button type="submit" onClick={handleSubmit}>Edit</button>
+        </div>
+        
     </form>
       );
 }
