@@ -10,6 +10,20 @@
   overflow: hidden;
   text-align: center;
   }
+  @media screen and (max-width: 750px){
+    #project-list {
+      display: grid;
+      grid-template-columns: 90%;
+      column-gap: 10px;
+      row-gap: 10px;
+      font-weight: normal;
+      box-shadow: 0px 0px 15px gray;
+      border-radius: 10%;
+      text-decoration: none;
+      overflow: hidden;
+      text-align: center;
+    }
+  } /* media query for 750px  */
   .project-card{
     box-shadow: 0px 0px 15px gray;
     border-radius: 10%;
@@ -40,6 +54,7 @@
     /* background-position: right top; */
     border-radius: 10%;
   }
+
   
   header {
       display: flex;
